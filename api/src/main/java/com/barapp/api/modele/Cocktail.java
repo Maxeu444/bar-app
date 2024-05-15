@@ -14,7 +14,8 @@ import java.math.BigDecimal;
 @Setter
 @NoArgsConstructor
 public class Cocktail {
-    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_cocktail;
     @Column(length = 50)
     private String nom_cocktail;

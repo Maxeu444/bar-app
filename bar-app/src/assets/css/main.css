@@ -4,6 +4,21 @@
   font-weight: normal;
 }
 
+@font-face {
+  font-family: 'KyivType Sans';
+  src: url('@/assets/fonts/KyivTypeSans-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: Medium;
+}
+
+@font-face {
+  font-family: 'KyivType Sans';
+  src: url('@/assets/fonts/KyivTypeSans-Bold.otf') format('opentype');
+  font-weight: 700; 
+  font-style: Bold;
+}
+
+
 @media (min-width: 1024px) {
   body {
     display: flex;

@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import router from './router'; // Assurez-vous du chemin correct vers votre fichier de configuration de routage
+import router from './router'; 
 
 export default defineComponent({
   name: 'App',
@@ -12,4 +12,4 @@ export default defineComponent({
     return { router };
   },
 });
-</script>./router/router
+</script>

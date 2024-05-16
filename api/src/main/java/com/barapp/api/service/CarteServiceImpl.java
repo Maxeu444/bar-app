@@ -35,7 +35,7 @@ public class CarteServiceImpl implements CarteService{
                         .orElseThrow(() -> new RuntimeException("Cocktail non trouvé"));
                 cocktails.add(cocktail);
             }
-            carte.setCocktails(cocktails); // Assurez-vous que la classe Carte a un champ pour stocker les cocktails
+            carte.setCocktails(cocktails);
         }
         return cartes;
     }

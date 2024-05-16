@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name: 'MonComposant',
+    name: 'NavBar',
 }
 </script>
 
@@ -20,6 +20,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.070);
 }
 
 #logo{ 

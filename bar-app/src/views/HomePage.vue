@@ -1,11 +1,9 @@
-
-
 <template>
     <div id="container">
       <div id="content">
         <img id="logo" src="../assets/logoApp.png" alt="Logo">
         <div id="btn">
-          <button>Voir la carte</button>
+          <a href="/carte"><button>Voir la carte</button></a>
           <button>Suivre ma commande</button>
         </div>
 
@@ -77,4 +75,3 @@
   }
 
   </style>
-  

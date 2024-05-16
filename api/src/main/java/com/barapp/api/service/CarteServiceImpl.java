@@ -1,10 +1,13 @@
 package com.barapp.api.service;
 
 import com.barapp.api.modele.Carte;
+import com.barapp.api.modele.Cocktail;
 import com.barapp.api.repository.CarteRepository;
+import com.barapp.api.repository.CocktailRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -12,6 +15,8 @@ import java.util.List;
 public class CarteServiceImpl implements CarteService{
 
     private final CarteRepository carteRepository;
+    private final CocktailRepository cocktailRepository;
+
     @Override
     public Carte creer(Carte carte) {
         return carteRepository.save(carte);
@@ -19,7 +24,20 @@ public class CarteServiceImpl implements CarteService{
 
     @Override
     public List<Carte> lire() {
-        return carteRepository.findAll();
+        List<Carte> cartes = carteRepository.findAll();
+        for (Carte carte : cartes) {
+            String cocktail_carte = carte.getCocktail_carte();
+            String[] cocktailIds = cocktail_carte.split(",");
+            List<Cocktail> cocktails = new ArrayList<>();
+            for (String id : cocktailIds) {
+                int cocktailId = Integer.parseInt(id.trim());
+                Cocktail cocktail = cocktailRepository.findById(cocktailId)
+                        .orElseThrow(() -> new RuntimeException("Cocktail non trouvé"));
+                cocktails.add(cocktail);
+            }
+            carte.setCocktails(cocktails); // Assurez-vous que la classe Carte a un champ pour stocker les cocktails
+        }
+        return cartes;
     }
 
     @Override
